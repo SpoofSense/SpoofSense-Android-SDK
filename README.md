@@ -1,9 +1,21 @@
 # SpoofSense Android SDK
 
-This repo is dedicated to Passive Liveness Detection ANdroid SDK developed at [SpoofSense](https://spoofsense.ai/ "Goto Official Website")
+This repo is dedicated to Passive Liveness Detection Android SDK developed at [SpoofSense](https://spoofsense.ai/ "Goto Official Website")
 
 
 ## Table of Contents
+
+1. [Device Requirements](#device-requirements)
+2. [Capture Process](#capture-process)
+3. [Quick Start](#quick-start)
+4. [Detailed Information](#detailed-information)
+      * [SDK Initialization](#sdk-initialization)
+      * [Starting the Capture](#starting-the-capture)
+      * [Checking the Result](#checking-the-result)
+      * [Result Codes](#result-codes)
+      * [SDK Configuration](#sdk-configuration)
+      * [Result](#result)
+5. [Contact Us](#contact-us)
 
 
 ## Device Requirements
@@ -122,7 +134,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent resultDa
 The capture is started by using an Intent to launch the CaptureActivity. Further `configuration` may be required and is passed as extra data to the Intent. For further information on how to call other Activities from Intents, see the Android [Javadoc](https://developer.android.com/reference/android/app/Activity.html#onActivityResult(int,%20int,%20android.content.Intent)) or [Tutorials](https://developer.android.com/training/basics/firstapp/starting-activity). Since you need to inspect returned data, you should make use of startActivityForResult rather than startActivity.
 
 
-## Checking the Result
+### Checking the Result
 
 Assuming that the Capture proceeded correctly, the results are placed in the returned Intent. Of all `Results`, only result is guaranteed to be present.
 
@@ -159,3 +171,8 @@ The result from a capture operation contains useful information.
 |Code|Integer|The result of the Capture. See `Result Codes` for the meaning|
 |prediction_result|String||
 |prediction_percentage|String||
+
+
+## Contact Us
+
+Contact us at [founders@spoofsense.com](mailto:founders@spoofsense.com)
