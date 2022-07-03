@@ -101,6 +101,12 @@ protected void onActivityResult(int requestCode, int resultCode, Intent resultDa
 
 ### SDK Initialization
 
+* com.chakshu.spoofsense.Init.start() will initialize the SDK and performs a number of lengthy operations. The start operation will immediately return, with the work being done in the background. This should be called at least 10 seconds before the Activity is launched, to speed up the start up of the activity. It is advised to call this function from the parent activity onCreate() function. If this initialization is not started, it will be called when the CaptureActivity is launched, delaying the capture process by up to 10 seconds.
+
+* Calling this method multiple times has no effect. Any fatal errors are not obvious until the CaptureActivity is launched, or if the status is checked. com.chakshu.spoofsense.Init.start() requires a [Bundle](https://developer.android.com/reference/android/os/Bundle) to be passed populated with configuration. api_key is a required parameter, and authenticates the source of requests.
+
+* A call to com.chakshu.spoofsense.Init.status() will return an Integer that indicates the status of the initialization. This is a convenience method, and does not need to be checked.
+
 > Table 1. SDK Initialization Status
 
 |Value|Meaning|
@@ -152,4 +158,4 @@ The result from a capture operation contains useful information.
 |-|-|-|
 |Code|Integer|The result of the Capture. See `Result Codes` for the meaning|
 |prediction_result|String||
-|presiction_percentage|String||
+|prediction_percentage|String||
