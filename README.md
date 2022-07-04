@@ -1,22 +1,66 @@
 # SpoofSense Android SDK
 
-This repo is dedicated to Passive Liveness Detection Android SDK developed at [SpoofSense](https://spoofsense.ai/ "Goto Official Website")
+Official repository for the Passive Liveness Detection Android SDK developed at [SpoofSense](https://spoofsense.ai/ "Goto Official Website").
 
 
 ## Table of Contents
 
-1. [Device Requirements](#device-requirements)
-2. [Capture Process](#capture-process)
-3. [Quick Start](#quick-start)
-4. [Detailed Information](#detailed-information)
+1. [Give Permissions](#give-permissions)
+2. [Device Requirements](#device-requirements)
+3. [Capture Process](#capture-process)
+4. [Quick Start](#quick-start)
+5. [Detailed Information](#detailed-information)
       * [SDK Initialization](#sdk-initialization)
       * [Starting the Capture](#starting-the-capture)
       * [Checking the Result](#checking-the-result)
       * [Result Codes](#result-codes)
       * [SDK Configuration](#sdk-configuration)
       * [Result](#result)
-5. [Contact Us](#contact-us)
+6. [Contact Us](#contact-us)
 
+
+## Give Permissions
+
+* Under the AndroidManifest.xml file, set the following permissions:
+
+```xml
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-feature android:name="android.hardware.camera" />
+<uses-feature android:name="android.hardware.camera.autofocus" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-feature
+   android:name="android.hardware.sensor.gyroscope"
+   android:required="true" />
+<uses-feature
+   android:name="android.hardware.sensor.accelerometer"
+   android:required="true" />
+```
+
+* Under the AndroidManifest.xml file, set the following flags:
+
+```xml
+android:usesCleartextTraffic="true"
+android:screenOrientation="portrait"
+android:largeHeap="true"
+android:hardwareAccelerated="false"
+```
+
+* Under the application level build.gradle, add the following implementations:
+
+```
+implementation project(path: '::SpoofSense-debug')
+implementation("com.squareup.okhttp3:okhttp:4.9.0")
+```
+
+* Under settings.gradle, add the following:
+
+```
+include ':SpoofSense'
+```
 
 ## Device Requirements
 
