@@ -219,4 +219,4 @@ The result from a capture operation contains useful information.
 
 ## Contact Us
 
-Contact us at [founders@spoofsense.com](mailto:founders@spoofsense.com)
+Contact us at [kartikeya@spoofsense.com](mailto:kartikeya@spoofsense.com)
